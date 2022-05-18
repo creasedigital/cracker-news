@@ -8,7 +8,7 @@ export const StoriesContainer = () => {
 
 	useEffect(() => {
 		getStoryIds().then((data) => setStoryIds(data));
-		storyIds && getStory(storyIds[0]).then((data) => console.log(data));
+		// storyIds && getStory(storyIds[0]).then((data) => console.log(data));
 	}, []);
 
 	return storyIds.map((storyId) => <Story storyId={storyId} />);
