@@ -1,5 +1,5 @@
 import { Box, Link, Flex } from "@chakra-ui/react";
-import ReactStars from "react-stars";
+import { RatingStar } from "rating-star";
 import { useState, useEffect } from "react";
 import { getStoryIds, getStory } from "../services/hnApi";
 
@@ -20,9 +20,9 @@ export const Story = ({ storyId }) => {
 				</Link>
 			</Box>
 			<Flex align="center" justify="space-between" m={10}>
-				<Flex align="center">
+				<Flex justify="center" direction="column">
 					Stars:{" "}
-					{<ReactStars count={story.score} size={32} color1={"#ff3366"} />}
+					{<RatingStar maxScore={5} rating={story.score} id={story.id} />}
 				</Flex>
 				<Box>Author: {story.by}</Box>
 			</Flex>
