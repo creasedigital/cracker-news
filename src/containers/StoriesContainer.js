@@ -1,6 +1,8 @@
 import { getStoryIds, getStory } from "../services/hnApi";
+import { Story } from "../components/Story";
 import { useState, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
+
 export const StoriesContainer = () => {
 	const [storyIds, setStoryIds] = useState([]);
 
@@ -9,5 +11,5 @@ export const StoriesContainer = () => {
 		storyIds && getStory(storyIds[0]).then((data) => console.log(data));
 	}, []);
 
-	return <Box>{JSON.stringify(storyIds)}</Box>;
+	return storyIds.map((storyId) => <Story storyId={storyId} />);
 };
