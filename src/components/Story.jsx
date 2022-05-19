@@ -28,7 +28,9 @@ export const Story = ({ storyId }) => {
 						{<RatingStar maxScore={5} rating={story.score} id={story.id} />}
 					</Box>
 				</Flex>
-				<Box>Author: {story.by}</Box>
+				<Box>
+					Author: {story.by} {"  "} - {Date(story.time).toString()}
+				</Box>
 			</Flex>
 		</Flex>
 	) : null;
