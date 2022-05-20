@@ -1,10 +1,10 @@
 import { Box, Link, Flex } from "@chakra-ui/react";
 import { RatingStar } from "rating-star";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { getStoryIds, getStory } from "../services/hnApi";
 import { mapTime } from "../mappers/mapTime";
 
-export const Story = ({ storyId }) => {
+export const Story = memo(function Story({ storyId }) {
 	const [story, setStory] = useState({});
 
 	useEffect(() => {
@@ -35,4 +35,4 @@ export const Story = ({ storyId }) => {
 			</Flex>
 		</Flex>
 	) : null;
-};
+});
