@@ -2,6 +2,7 @@ import { Box, Link, Flex } from "@chakra-ui/react";
 import { RatingStar } from "rating-star";
 import { useState, useEffect } from "react";
 import { getStoryIds, getStory } from "../services/hnApi";
+import { mapTime } from "../mappers/mapTime";
 
 export const Story = ({ storyId }) => {
 	const [story, setStory] = useState({});
@@ -29,7 +30,7 @@ export const Story = ({ storyId }) => {
 					</Box>
 				</Flex>
 				<Box>
-					Author: {story.by} {"  "} - {Date(story.time).toString()}
+					Author: {story.by} {"  "} - {mapTime(story.time)}
 				</Box>
 			</Flex>
 		</Flex>
