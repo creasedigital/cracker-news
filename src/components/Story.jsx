@@ -1,4 +1,4 @@
-import { Box, Link, Flex } from "@chakra-ui/react";
+import { Box, Link, Flex, Center } from "@chakra-ui/react";
 import { RatingStar } from "rating-star";
 import { useState, useEffect, memo } from "react";
 import { getStoryIds, getStory } from "../services/hnApi";
@@ -14,13 +14,25 @@ export const Story = memo(function Story({ storyId }) {
 	// return JSON.stringify(story);
 
 	return story && story.url ? (
-		<Flex flexDirection="column" align="start" bg="#AFBE87" px={10} my={8}>
+		<Flex flexDirection="column" align="start" bg="#393939" px={10} my={8}>
 			<Box>
-				<Link href={story.url} textDecoration="none">
+				<Link
+					href={story.url}
+					textDecoration="none"
+					color="white"
+					_hover={{ fontWeight: "bold" }}
+				>
 					<Box as="p">{story.title}</Box>
 				</Link>
 			</Box>
-			<Flex w="75%" align="center" justify="space-between" my={4}>
+			<Flex
+				w="75%"
+				align="center"
+				justify="space-between"
+				my={4}
+				px={2}
+				bgColor="#e9e9e9"
+			>
 				<Flex align="center" justify="space-between">
 					<Box as="p" fontStyle="italic">
 						Stars:{" "}
