@@ -30,7 +30,7 @@ export const Story = ({ storyId }) => {
 					</Box>
 				</Flex>
 				<Box>
-					Author: {story.by} {"  "} - {mapTime(story.time)}
+					Author: {story.by} {"  "} - {`${mapTime(story.time)} ago`}
 				</Box>
 			</Flex>
 		</Flex>
